@@ -13,4 +13,4 @@ var multiples = function(){
   }
 
   return result;
-}
+};
