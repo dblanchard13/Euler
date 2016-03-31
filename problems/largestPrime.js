@@ -31,3 +31,28 @@ function isPrime(num){
 };
 
 console.log(largestPrimeFact(600851475143));
+
+// naive implementation of the Sieve of Eratosthenes
+function eratos(num){
+  var eliminated = {'1': true};
+  var primes = {};
+  var n = n || 2
+
+  while(n < num){
+    for(var i=n*n; i<=num; i+=n){
+      eliminated[i] = true;
+    }
+    n ++;
+    while(eliminated[n]){
+      n ++;
+    }
+  }
+
+  for(var y=1; y<=num; y++){
+    if(!eliminated[y]){
+      primes[y] = true;
+    }
+  }
+
+  return primes;
+};
